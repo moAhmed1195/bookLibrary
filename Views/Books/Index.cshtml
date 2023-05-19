@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Book>
+@{
+	ViewData["Title"] = "Books";
+}
+
+<h2> <i class="fa-sharp fa-solid fa-book"></i> Books</h2>
+
+<hr />
+<a class="btn btn-primary" asp-action="Create">  <i class="fa-solid fa-plus fa-lg"></i>  Add Book</a>
+
+<div class="mt-4">
+	@if (!Model.Any())
+	{
+		<p class="alert alert-info" role="alert">  No Books Found ! </p>
+	}
+	else
+	{
+		<ul>
+			@foreach(var book in Model)
+			{
+				<li>@book.Title</li>
+			}
+		</ul>
+	}
+</div>
